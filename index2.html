@@ -23,15 +23,14 @@
                         prompt("Choose your weapon.", "rock, paper or scissors").toLowerCase();
                 let computerChoice = generateComputerChoice();
                 if (playerChoice === computerChoice) {
-                    return 'Draw. ' + capitalizeFirstLetter(playerChoice) + ` vs. ${computerChoice}.`
+                    return 'draw';
                 }   else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
                              (playerChoice === 'paper' && computerChoice === 'rock') ||
                              (playerChoice === 'scissors' && computerChoice === 'paper')) {
-                                 return 'You win! ' + capitalizeFirstLetter(playerChoice) +
-                                        ` beats ${computerChoice}.`;
+                                 return 'win';
                     }
                     else {
-                        return `You lose... ${playerChoice} loses to ${computerChoice}.`;
+                        return 'lose';
                     }
             }
             function play5RoundGame() {
