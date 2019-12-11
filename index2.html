@@ -37,14 +37,29 @@
                 let playerScore = 0;
                 let computerScore = 0;
                 for (let i = 0; i < 5; i++) {
-                    playRound();
-                    if 
+                    let roundOutcome = playRound();
+                    console.log(roundOutcome)
+                    if (roundOutcome === 'win') {
+                        playerScore += 1;
+                    }   else if (roundOutcome === 'lose') {
+                        computerScore += 1;
+                    }
+                }
+                if (playerScore > computerScore) {
+                    console.log(`You win: ${playerScore} to ${computerScore}`);
+                }   else if (playerScore === computerScore) {
+                    console.log(`Draw: ${playerScore} to ${computerScore}`)
+                }   else {
+                    console.log(`You lose: ${playerScore} to ${computerScore}`)
                 }
             }
 
             
-            console.log(generateComputerChoice() + " This is bottom console.log");
-            console.log(playRound());
+            // console.log(generateComputerChoice() + " This is bottom console.log");
+            // console.log(playRound());
+            play5RoundGame()
+            // roundOutcome = playRound();
+            // console.log(roundOutcome);
 
         </script>
     </body>
