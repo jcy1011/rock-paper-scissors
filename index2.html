@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Rock Paper Scissors 2</title>
+    </head>
+    <body>
+        <script>
+
+            const gameChoices = ['rock', 'paper', 'scissors'];
+
+            function generateRandomInteger() {
+                return Math.floor(Math.random() * gameChoices.length);
+            }
+            function generateComputerChoice() {
+                return gameChoices[generateRandomInteger()];
+            }
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+            function playRound() {
+                let playerChoice =
+                        prompt("Choose your weapon.", "rock, paper or scissors").toLowerCase();
+                let computerChoice = generateComputerChoice();
+                if (playerChoice === computerChoice) {
+                    return 'Draw. ' + capitalizeFirstLetter(playerChoice) + ` vs. ${computerChoice}.`
+                }   else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+                             (playerChoice === 'paper' && computerChoice === 'rock') ||
+                             (playerChoice === 'scissors' && computerChoice === 'paper')) {
+                                 return 'You win! ' + capitalizeFirstLetter(playerChoice) +
+                                        ` beats ${computerChoice}.`;
+                    }
+                    else {
+                        return `You lose... ${playerChoice} loses to ${computerChoice}.`;
+                    }
+            }
+            function play5RoundGame() {
+                let playerScore = 0;
+                let computerScore = 0;
+                for (let i = 0; i < 5; i++) {
+                    playRound();
+                    if 
+                }
+            }
+
+            
+            console.log(generateComputerChoice() + " This is bottom console.log");
+            console.log(playRound());
+
+        </script>
+    </body>
+</html>
